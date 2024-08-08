@@ -8,5 +8,4 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface VideogameRepository extends JpaRepository<Videogame,Long> {
     Page<Videogame> findAllByGenre(String genre, Pageable pageable);
     Page<Videogame> findAllByPlatform(String platform, Pageable pageable);
-
 }
