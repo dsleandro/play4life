@@ -1,21 +1,24 @@
 package com.dsleandro.play4life.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
+@Table(name = "invoice")
 public class Invoice {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
-    private Long videogameId;
+    @Column(name = "gameId")
+    private Long gameId;
+    @Column(name = "customerId")
     private String customerId;
+    @Column(name = "date")
     private String date;
+    @Column(name = "amount")
     private float amount;
 }
